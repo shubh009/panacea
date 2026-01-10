@@ -22,7 +22,7 @@
         extend: {
           colors: {
             primary: '#d73c3c',
-            secondary: '#f7cece'
+            secondary: '#F7EEE9'
           },
           fontFamily: {
             heading: ['Poppins', 'sans-serif'],
@@ -38,56 +38,151 @@
 
   <!-- ================= HEADER ================= -->
   <header class="sticky top-0 bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="text-xl font-heading font-semibold text-primary">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between relative">
+      <div class="text-2xl font-heading font-semibold text-primary">
         Panacea Home Care
       </div>
 
-      <nav class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#services" class="hover:text-primary">Services</a>
-        <a href="#why-us" class="hover:text-primary">Why Us</a>
-        <a href="#process" class="hover:text-primary">How It Works</a>
-        <a href="#testimonials" class="hover:text-primary">Testimonials</a>
-        <a href="#contact" class="hover:text-primary">Contact</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex gap-8 text-md font-bold">
+        <a href="#services" class="hover:text-primary transition-colors">Services</a>
+        <a href="#why-us" class="hover:text-primary transition-colors">Why Us</a>
+        <a href="#process" class="hover:text-primary transition-colors">How It Works</a>
+        <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
       </nav>
 
-      <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90">
-        Book Assessment
-      </a>
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-primary focus:outline-none p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+      <nav class="flex flex-col p-4 space-y-4 font-medium text-left text-gray-700">
+        <a href="#services" class="hover:text-primary transition-colors">Services</a>
+        <a href="#why-us" class="hover:text-primary transition-colors">Why Us</a>
+        <a href="#process" class="hover:text-primary transition-colors">How It Works</a>
+        <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h1 class="font-heading text-3xl md:text-5xl font-bold mb-6">
-          Compassionate Home Care,<br>
-          <span class="text-primary">Trusted by Families</span>
-        </h1>
-        <p class="mb-8 text-gray-600">
-          Professional elder care, ICU at home, nursing and recovery services
-          delivered with empathy, safety, and medical excellence.
-        </p>
-        <div class="flex gap-4">
-          <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-semibold">
-            Get Free Consultation
-          </a>
-          <a href="#services" class="border border-primary text-primary px-6 py-3 rounded-md font-semibold">
-            Explore Services
-          </a>
-        </div>
-      </div>
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
 
-      <div class="hidden md:block">
-        <div class="bg-secondary rounded-xl p-10 text-center">
-          <p class="font-heading font-semibold text-lg">
-            Care That Feels Like Home
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <!-- ================= HERO ================= -->
+  <!-- ================= HERO ================= -->
+  <section class="relative bg-white min-h-[600px] flex items-center">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2068&auto=format&fit=crop"
+        alt="Caring hands" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-white/90 md:bg-white/80"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-[100] flex flex-col gap-2"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-20 relative z-10 w-full">
+      <div class="flex flex-col md:flex-row md:justify-between items-center gap-8 md:gap-0">
+
+        <!-- Left Column: Content (65%) -->
+        <div class="w-full md:w-[65%] text-center md:text-left">
+          <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+            Compassionate Home Care,<br>
+            <span class="text-primary">Trusted by Families</span>
+          </h1>
+          <p class="mb-8 text-lg text-gray-700 md:max-w-xl mx-auto md:mx-0">
+            Professional elder care, ICU at home, nursing and recovery services
+            delivered with empathy, safety, and medical excellence.
           </p>
+          <div class="hidden md:flex gap-4">
+            <a href="#services"
+              class="bg-primary text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+              Explore Our Services
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Enquiry Form (30%) -->
+        <div class="w-full md:w-[30%]">
+          <div class="bg-secondary/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-2xl border border-white/50">
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-2">
+              Book a Free Consultation
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm">
+              Get a personalized care plan today.
+            </p>
+
+            <form class="space-y-4" novalidate>
+              <div>
+                <label for="name" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Full
+                  Name</label>
+                <input type="text" id="name" placeholder="John Doe"
+                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Phone
+                  Number</label>
+                <input type="tel" id="phone" placeholder="+91 98765 43210"
+                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
+              </div>
+
+              <div>
+                <label for="service" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Service
+                  Required</label>
+                <select id="service"
+                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 outline-none appearance-none text-sm">
+                  <option value="" disabled selected>Select a Service</option>
+                  <option value="elder-care">Elder Care</option>
+                  <option value="icu-home">ICU at Home</option>
+                  <option value="nursing">Nursing Care</option>
+                  <option value="physiotherapy">Physiotherapy</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-primary text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 mt-2 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Book Consultation
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Script for Validation -->
+  <script src="js/validation.js"></script>
 
   <!-- ================= SERVICES ================= -->
   <section id="services" class="bg-secondary">
@@ -98,7 +193,8 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Service Card -->
-        <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-100">
           <h3 class="font-heading font-semibold text-lg mb-3">Elder Care</h3>
           <p class="text-sm text-gray-600">
             Daily assistance, companionship, medication support, and safety
@@ -106,35 +202,40 @@
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-100">
           <h3 class="font-heading font-semibold text-lg mb-3">ICU at Home</h3>
           <p class="text-sm text-gray-600">
             Advanced medical equipment and trained professionals delivering ICU-level care at home.
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-100">
           <h3 class="font-heading font-semibold text-lg mb-3">Nursing Care</h3>
           <p class="text-sm text-gray-600">
             Skilled nurses for injections, wound care, post-operative recovery and monitoring.
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-100">
           <h3 class="font-heading font-semibold text-lg mb-3">Physiotherapy</h3>
           <p class="text-sm text-gray-600">
             Personalized rehabilitation programs delivered by certified physiotherapists.
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-100">
           <h3 class="font-heading font-semibold text-lg mb-3">Post-Hospital Care</h3>
           <p class="text-sm text-gray-600">
             Smooth recovery after discharge with medical supervision and personal care.
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-100">
           <h3 class="font-heading font-semibold text-lg mb-3">Doctor Visits</h3>
           <p class="text-sm text-gray-600">
             Scheduled and on-call doctor consultations from the comfort of home.
@@ -185,19 +286,27 @@
 
       <div class="grid md:grid-cols-4 gap-8 text-center">
         <div>
-          <span class="text-primary font-heading font-bold text-xl">01</span>
+          <div
+            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
+            01</div>
           <p class="mt-2 font-semibold">Consultation</p>
         </div>
         <div>
-          <span class="text-primary font-heading font-bold text-xl">02</span>
+          <div
+            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
+            02</div>
           <p class="mt-2 font-semibold">Assessment</p>
         </div>
         <div>
-          <span class="text-primary font-heading font-bold text-xl">03</span>
+          <div
+            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
+            03</div>
           <p class="mt-2 font-semibold">Care Plan</p>
         </div>
         <div>
-          <span class="text-primary font-heading font-bold text-xl">04</span>
+          <div
+            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
+            04</div>
           <p class="mt-2 font-semibold">Ongoing Care</p>
         </div>
       </div>
