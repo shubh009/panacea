@@ -21,7 +21,7 @@
       theme: {
         extend: {
           colors: {
-            primary: '#d73c3c',
+            primary: '#B53437',
             secondary: '#F7EEE9'
           },
           fontFamily: {
@@ -40,7 +40,7 @@
   <header class="sticky top-0 bg-white shadow z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between relative">
       <div class="text-2xl font-heading font-semibold text-primary">
-        Panacea Home Care
+        <img src="./images/Panacea-Logo.jpg" alt="Panacea Logo" class="w-40">
       </div>
 
       <!-- Desktop Nav -->
@@ -94,9 +94,8 @@
   <section class="relative bg-white min-h-[600px] flex items-center">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2068&auto=format&fit=crop"
-        alt="Caring hands" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-white/90 md:bg-white/80"></div>
+      <img src="./images/bg-hero.jpeg" alt="Caring hands" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gray-900/90 md:bg-secondary/70"></div>
     </div>
 
     <!-- Toast Container -->
@@ -108,8 +107,8 @@
         <!-- Left Column: Content (65%) -->
         <div class="w-full md:w-[65%] text-center md:text-left">
           <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-            Compassionate Home Care,<br>
-            <span class="text-primary">Trusted by Families</span>
+            All Your Health Needs <br>
+            <span class="text-primary">At Panacea Homecare</span>
           </h1>
           <p class="mb-8 text-lg text-gray-700 md:max-w-xl mx-auto md:mx-0">
             Professional elder care, ICU at home, nursing and recovery services
@@ -117,7 +116,7 @@
           </p>
           <div class="hidden md:flex gap-4">
             <a href="#services"
-              class="bg-primary text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+              class="outline  outline-[1px] outline-primary/50 text-primary px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center gap-2">
               Explore Our Services
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
@@ -255,7 +254,7 @@
           </p>
 
           <!-- Stats Row -->
-          <div class="flex flex-wrap gap-8 md:gap-12 mb-10 border-b border-gray-100 pb-8">
+          <div class="flex flex-wrap gap-8 md:gap-12 mb-8 border-b border-gray-100 pb-4">
             <div>
               <p class="text-3xl font-bold text-primary font-heading">150+</p>
               <p class="text-xs text-gray-500 font-semibold uppercase mt-1">Professional Staff</p>
@@ -274,10 +273,17 @@
 
           <!-- Founder Signature -->
           <div>
-            <div class="font-heading font-medium text-2xl text-primary font-cursive mb-2"
-              style="font-family: 'Great Vibes', cursive;">Dr. Anjali Sharma</div>
-            <p class="text-sm font-bold text-gray-800 tracking-wide uppercase">Dr. Anjali Sharma <span
-                class="text-primary">•</span> Founder & CEO</p>
+            <div class="font-heading font-medium text-2xl text-black font-cursive mb-2"
+              style="font-family: 'Great Vibes', cursive, italic;">Best Home Care Center with Love Since 2014</div>
+
+          </div>
+          <div class="flex justify-between">
+            <a href="#services" class="outline  outline-[1px] outline-primary/50 text-primary px-8 py-2 rounded-full 
+              font-semibold shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all 
+              transform hover:-translate-y-1 items-center gap-2">
+              Request A Callback
+
+            </a>
           </div>
         </div>
       </div>
@@ -346,7 +352,7 @@
   </section>
 
   <!-- ================= WHY US ================= -->
-  <section id="why-us" class="bg-white">
+  <!-- <section id="why-us" class="bg-white">
     <div class="max-w-7xl mx-auto px-4 py-20">
       <h2 class="font-heading text-3xl font-bold text-center mb-12">
         Why Families Choose Us
@@ -375,10 +381,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ================= PROCESS ================= -->
-  <section id="process" class="bg-secondary">
+  <!-- <section id="process" class="bg-secondary">
     <div class="max-w-7xl mx-auto px-4 py-20">
       <h2 class="font-heading text-3xl font-bold text-center mb-12">
         How It Works
@@ -411,10 +417,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ================= TESTIMONIALS ================= -->
-  <section id="testimonials" class="bg-white">
+  <!-- <section id="testimonials" class="bg-white">
     <div class="max-w-7xl mx-auto px-4 py-20">
       <h2 class="font-heading text-3xl font-bold text-center mb-12">
         What Our Clients Say
@@ -438,10 +444,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ================= CTA ================= -->
-  <section id="contact" class="bg-primary text-white">
+  <!-- <section id="contact" class="bg-primary text-white">
     <div class="max-w-7xl mx-auto px-4 py-20 text-center">
       <h2 class="font-heading text-3xl font-bold mb-4">
         Speak to a Care Expert Today
@@ -453,14 +459,14 @@
         Request Call Back
       </a>
     </div>
-  </section>
+  </section> -->
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-white">
+  <!-- <footer class="bg-white">
     <div class="max-w-7xl mx-auto px-4 py-10 text-center text-sm text-gray-600">
       © 2026 Panacea Home Care. All rights reserved.
     </div>
-  </footer>
+  </footer> -->
 
 </body>
 
