@@ -559,68 +559,135 @@
     </div>
   </section>
 
-  <!-- ================= PROCESS ================= -->
-  <!-- <section id="process" class="bg-secondary">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <h2 class="font-heading text-3xl font-bold text-center mb-12">
-        How It Works
-      </h2>
 
-      <div class="grid md:grid-cols-4 gap-8 text-center">
-        <div>
-          <div
-            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
-            01</div>
-          <p class="mt-2 font-semibold">Consultation</p>
+
+  <!-- ================= TESTIMONIALS (Bento Grid) ================= -->
+  <section id="testimonials" class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-16 items-center">
+
+        <!-- Left: Content (35%) -->
+        <div class="lg:w-[35%] space-y-8">
+          <h2 class="font-heading text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+            Real families, Real care, <br> <span class="text-primary"> Real stories</span>
+          </h2>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Unlock peace of mind with our handpicked team of experts. We don't just provide care; we build lasting
+            relationships based on trust and dignity.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="pt-4">
+            <a href="#contact"
+              class="bg-gray-900 text-white px-8 py-4 rounded-full text-sm font-bold tracking-wide hover:bg-gray-800 transition-colors inline-flex items-center gap-2 group">
+              Need Care? Book a Call
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="flex items-center gap-4 pt-4">
+            <div class="flex -space-x-3">
+              <img class="w-10 h-10 rounded-full border-2 border-white"
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="User">
+              <img class="w-10 h-10 rounded-full border-2 border-white"
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="User">
+              <img class="w-10 h-10 rounded-full border-2 border-white"
+                src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=100&h=100&fit=crop" alt="User">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600">
+                +500</div>
+            </div>
+            <div class="text-sm">
+              <p class="font-bold text-gray-900">500+ Happy Families</p>
+              <p class="text-gray-500 text-xs">Rated 4.9/5 stars On Google Listing</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <div
-            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
-            02</div>
-          <p class="mt-2 font-semibold">Assessment</p>
+
+        <!-- Right: Bento Grid (65%) -->
+        <div class="lg:w-[65%] w-full">
+          <!-- Masonry Grid: 3 cols on desktop -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Column 1 -->
+            <div class="space-y-6 flex flex-col">
+              <!-- Card 1: Portrait (Mike) -->
+              <div class="relative h-64 rounded-[2rem] overflow-hidden group">
+                <img src="./images/about-1.jpeg"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mike">
+                <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                  <div class="text-xs font-bold text-gray-900">Mike</div>
+                  <div class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Patient's Son
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2: Text (Purple Style -> Panacea Soft Red) -->
+              <div
+                class="bg-[#FFF1F2] p-8 rounded-[2rem] flex-grow flex flex-col justify-center min-h-[160px] hover:shadow-lg transition-shadow">
+                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Compassionate Care</h3>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                  "They treated my father with such dignity. It felt like family."
+                </p>
+              </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="space-y-6 flex flex-col">
+              <!-- Card 3: Text (Green Style -> Panacea Beige) -->
+              <div
+                class="bg-secondary p-8 rounded-[2rem] flex-grow flex flex-col justify-center min-h-[160px] hover:shadow-lg transition-shadow">
+                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Quick & Adaptable</h3>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                  "Hire within 24 hours. Easily adjust your care plan as needs change."
+                </p>
+              </div>
+              <!-- Card 4: Portrait (Asger) -->
+              <div class="relative h-64 rounded-[2rem] overflow-hidden group">
+                <img src="./images/About2.jpg"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Asger">
+                <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                  <div class="text-xs font-bold text-gray-900">Dr. Asger</div>
+                  <div class="bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Physician</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="space-y-6 flex flex-col">
+              <!-- Card 5: Portrait (Latisha) -->
+              <div class="relative h-64 rounded-[2rem] overflow-hidden group">
+                <img src="./images/bg-hero.jpeg"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Latisha">
+                <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                  <div class="text-xs font-bold text-gray-900">Latisha</div>
+                  <div class="bg-purple-100 text-purple-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Head Nurse
+                  </div>
+                </div>
+              </div>
+              <!-- Card 6: Text (Orange Style -> Neutral Gray) -->
+              <div
+                class="bg-gray-50 p-8 rounded-[2rem] flex-grow flex flex-col justify-center min-h-[160px] hover:shadow-lg transition-shadow">
+                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Zero Hassle</h3>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                  "No hidden fees or legal worries. Just pure, focused care."
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div>
-          <div
-            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
-            03</div>
-          <p class="mt-2 font-semibold">Care Plan</p>
-        </div>
-        <div>
-          <div
-            class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl shadow-md mx-auto mb-4">
-            04</div>
-          <p class="mt-2 font-semibold">Ongoing Care</p>
-        </div>
+
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <!-- ================= TESTIMONIALS ================= -->
-  <!-- <section id="testimonials" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <h2 class="font-heading text-3xl font-bold text-center mb-12">
-        What Our Clients Say
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-secondary p-6 rounded-xl">
-          <p class="text-sm">
-            “Panacea Home Care provided exceptional ICU-level care for my father.
-            Professional, compassionate, and reliable.”
-          </p>
-          <p class="mt-4 font-semibold">— Family Member</p>
-        </div>
-
-        <div class="bg-secondary p-6 rounded-xl">
-          <p class="text-sm">
-            “The nursing staff was extremely caring and well-trained.
-            Recovery at home felt safe and comfortable.”
-          </p>
-          <p class="mt-4 font-semibold">— Patient</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <!-- ================= CTA ================= -->
   <!-- <section id="contact" class="bg-primary text-white">
