@@ -48,10 +48,10 @@
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 text-md font-bold">
           <a href="/" class="hover:text-primary transition-colors">Home</a>
-          <a href="#" class="hover:text-primary transition-colors">About Us</a>
-          <a href="#" class="hover:text-primary transition-colors">Services</a>
-          <a href="#" class="hover:text-primary transition-colors">Testimonials</a>
-          <a href="#" class="hover:text-primary transition-colors">Contact Us</a>
+          <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
+          <a href="#services" class="hover:text-primary transition-colors">Services</a>
+          <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+          <a href="#contact" class="hover:text-primary transition-colors">Contact Us</a>
 
         </nav>
 
@@ -500,6 +500,73 @@
   </section>
 
 
+
+  <!-- ================= FINAL CTA SECTION ================= -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+      <div
+        class="bg-gradient-to-br from-primary via-[#9b292b] to-[#701c1e] rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl border border-white/10">
+
+        <!-- Animated Background Vital Sign (Curved Pulse) -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.15] overflow-hidden">
+          <svg viewBox="0 0 1000 200" preserveAspectRatio="none" class="w-full h-full text-white">
+            <path id="bg-ecg-line"
+              d="M0,100 C50,100 150,100 200,100 C220,100 230,70 240,100 C250,130 265,20 285,100 C305,180 320,100 330,100 C380,100 450,100 500,100 C520,100 530,70 540,100 C550,130 565,20 585,100 C605,180 620,100 630,100 C680,100 750,100 800,100 C820,100 830,70 840,100 C850,130 865,20 885,100 C905,180 920,100 930,100 C980,100 1000,100 1000,100"
+              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            <style>
+              #bg-ecg-line {
+                stroke-dasharray: 2500;
+                stroke-dashoffset: 2500;
+                animation: ecg-flow-curved 10s linear infinite;
+              }
+
+              @keyframes ecg-flow-curved {
+                to {
+                  stroke-dashoffset: 0;
+                }
+              }
+            </style>
+          </svg>
+        </div>
+
+        <!-- Decorative background circles -->
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-black/10 rounded-full blur-3xl"></div>
+
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
+          <div class="text-center lg:text-left text-white max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              Immediate Assistance Available
+            </div>
+            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Ready to bring Home care <br class="hidden md:block"> to your doorstep?
+            </h2>
+            <p class="text-white/80 text-lg md:text-xl leading-relaxed">
+              Don't wait for recovery. Start your journey to healing today with our certified medical team.
+              We are available 24/7 for your emergencies.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+            <a href="tel:+91-9528022510"
+              class="flex items-center justify-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg shadow-lg hover:bg-gray-50 transition-all transform hover:-translate-y-1 text-center min-w-[280px]">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                </path>
+              </svg>
+              Talk to medical expert
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+  </section>
 
   <!-- ================= TESTIMONIALS (Bento Grid) ================= -->
   <section id="testimonials" class="bg-white py-24">
