@@ -183,10 +183,14 @@
                 <select id="service"
                   class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 outline-none appearance-none text-sm">
                   <option value="" disabled selected>Select a Service</option>
-                  <option value="elder-care">Elder Care</option>
+                  <option value="elder-care">Elder/Senior Care</option>
                   <option value="icu-home">ICU at Home</option>
                   <option value="nursing">Nursing Care</option>
+                  <option value="medical-equipment">Medical Equipment</option>
+                  <option value="medicine-at-home">Medicine At Home</option>
                   <option value="physiotherapy">Physiotherapy</option>
+                  <option value="doctor-consultation">Doctor Consultation</option>
+                  <option value="cancer-care">Cancer Care</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -452,14 +456,16 @@
               <!-- Floating Badge 2: Years of Experience -->
               <div
                 class="absolute -top-4 -right-8 md:-right-12 z-30 bg-primary text-white p-4 rounded-3xl shadow-2xl border border-white/20 transform rotate-6 animate-pulse-slow">
-                <div class="flex flex-col items-center justify-center text-center">
-                  <svg class="w-6 h-6 mb-1 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-center gap-3">
+                  <svg class="w-6 h-6 opacity-90 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                     </path>
                   </svg>
-                  <span class="text-2xl font-bold leading-none">10+</span>
-                  <span class="text-[0.6rem] font-medium uppercase tracking-widest leading-none mt-1">Years Trust</span>
+                  <div class="flex flex-col items-start translate-y-0.5">
+                    <span class="text-[0.6rem] font-medium uppercase tracking-widest leading-none mb-1">Since</span>
+                    <span class="text-2xl font-bold leading-none">2021</span>
+                  </div>
                 </div>
               </div>
 
@@ -723,10 +729,12 @@
               <!-- Card 1: Portrait (Mike) -->
               <div class="relative h-64 rounded-[2rem] overflow-hidden group">
                 <img src="./images/about-1.jpeg"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mike">
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Mr Ayush">
                 <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <div class="text-xs font-bold text-gray-900">Mike</div>
-                  <div class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Patient's Son
+                  <!-- <div class="text-xs font-bold text-gray-900">Mike</div> -->
+                  <div class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Mr. Ayush
+                    Yadav
                   </div>
                 </div>
               </div>
@@ -756,8 +764,8 @@
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   alt="Asger">
                 <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <div class="text-xs font-bold text-gray-900">Dr. Asger</div>
-                  <div class="bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Physician</div>
+                  <!-- <div class="text-xs font-bold text-gray-900">Mr. Rohit</div> -->
+                  <div class="bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Mr Rohit</div>
                 </div>
               </div>
             </div>
@@ -770,8 +778,9 @@
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-gray-200 border-2"
                   alt=" Latisha">
                 <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <div class="text-xs font-bold text-gray-900">Latisha</div>
-                  <div class="bg-purple-100 text-purple-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Head Nurse
+                  <!-- <div class="text-xs font-bold text-gray-900">Miss Sonam Gupta</div> -->
+                  <div class="bg-purple-100 text-purple-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Miss Sonam
+                    Gupta
                   </div>
                 </div>
               </div>
@@ -888,11 +897,10 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                Commencing your journey for the best <strong>home care services in Agra</strong> with Panacea is a
-                seamless process. Whether you need professional <strong>nursing at home in Agra</strong> or general
-                <strong>home care in Agra</strong>, you can begin by scheduling a complimentary consultation. Following
-                this, our Care Coordinator will conduct a comprehensive home visit to assess specific requirements and
-                develop a personalized care strategy tailored to your family's needs.
+                Starting your care journey with Panacea is simple. Whether you need professional nursing or general
+                home care in Agra, you can begin by scheduling a free consultation. Our Care Coordinator will then
+                visit your home to assess specific requirements and create a personalized plan tailored to your family's
+                needs.
                 <div class="mt-6">
                   <p class="font-bold text-gray-900 mb-3">You can book expert care by just clicking on the link below:
                   </p>
@@ -925,10 +933,9 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                We offer highly flexible scheduling options for <strong>home care in Agra</strong> designed to
-                accommodate diverse care requirements. Our <strong>home care services in Agra</strong> are available on
-                an hourly, daily, or weekly basis, including dedicated 12-hour or 24-hour <strong>nursing at home in
-                  Agra</strong>. All scheduling is subject to thorough clinical assessment and staff availability.
+                We offer flexible scheduling options to accommodate various needs. Our home care services in Agra are
+                available on an hourly, daily, or weekly basis, including 12-hour or 24-hour nursing support. All
+                schedules are finalized after a thorough clinical assessment.
               </div>
             </div>
           </div>
@@ -948,10 +955,9 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                Excellence in reliable <strong>home care in Agra</strong> is our primary objective. Every member of our
-                clinical team providing <strong>nursing at home in Agra</strong> is rigorously trained, extensively
-                experienced, and thoroughly verified. All professional <strong>home care services in Agra</strong> are
-                conducted by qualified health practitioners under strict medical supervision and established protocols.
+                Providing reliable care is our top priority. Every member of our team is rigorously trained,
+                experienced, and thoroughly background-verified. All medical services are conducted by qualified health
+                practitioners under strict clinical supervision and established protocols.
               </div>
             </div>
           </div>
@@ -970,11 +976,9 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                To ensure the highest standards for <strong>home care services in Agra</strong>, a valid doctor’s
-                prescription is mandatory for all specialized medical and <strong>nursing at home in Agra</strong>
-                interventions. For
-                non-clinical assistance and basic <strong>home care in Agra</strong>, a formal prescription may not be
-                strictly required, depending on the scope of care.
+                To maintain the highest standards of safety, a valid doctor’s prescription is mandatory for specialized
+                medical and nursing interventions. For non-clinical assistance or basic home care, a formal prescription
+                may not be strictly required depending on the nature of support needed.
               </div>
             </div>
           </div>
@@ -996,10 +1000,8 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                Yes, Panacea provides flexible <strong>home care services in Agra</strong> including short-term,
-                long-term, and 24/7 <strong>home care in Agra</strong> based on patient requirements. Our
-                <strong>nursing
-                  at home in Agra</strong> is tailored for both post-surgical recovery and chronic illness management.
+                Yes, Panacea offers various engagement models including short-term, long-term, and 24-hour care options.
+                Our nursing services are tailored for both post-surgical recovery and chronic illness management.
               </div>
             </div>
           </div>
@@ -1018,11 +1020,9 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                Yes, every patient seeking <strong>home care in Agra</strong> receives a customized care plan based on
-                their medical condition, recovery goals, and level of support required. Our <strong>home care services
-                  in
-                  Agra</strong> ensure that whether it's specialized <strong>nursing at home in Agra</strong> or elder
-                care, the plan is perfectly aligned with your needs.
+                Absolutely. Every patient receives a customized care plan developed after assessing their medical
+                condition, recovery goals, and the specific level of support required. This ensures that the care
+                provided is perfectly aligned with individual needs.
               </div>
             </div>
           </div>
@@ -1042,9 +1042,8 @@
             </button>
             <div class="faq-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
-                In most cases, our <strong>home care services in Agra</strong> can be initiated within 24 hours after
-                assessment and confirmation. We prioritize urgent needs for <strong>nursing at home in Agra</strong> and
-                general <strong>home care in Agra</strong> to ensure immediate support for your loved ones.
+                In most cases, services can be initiated within 24 hours of assessment and confirmation. we understand
+                the urgency of medical needs and strive to provide immediate support to your loved ones.
               </div>
             </div>
           </div>
