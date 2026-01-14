@@ -86,14 +86,13 @@
       </div>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
       <nav class="flex flex-col p-4 space-y-4 font-medium text-left text-gray-700">
-        <a href="#services" class="hover:text-primary transition-colors">Services</a>
-        <a href="#why-us" class="hover:text-primary transition-colors">Why Us</a>
-        <a href="#process" class="hover:text-primary transition-colors">How It Works</a>
+        <a href="/" class="hover:text-primary transition-colors">Home</a>
+        <a href="/about-us.html" class="text-primary underline decoration-2 underline-offset-8">About Us</a>
+        <a href="/index.html#services" class="hover:text-primary transition-colors">Services</a>
         <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
-        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+        <a href="#contact" class="hover:text-primary transition-colors">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -1383,7 +1382,7 @@
       setTimeout(() => openPopup(false), 5000);
 
       // Trigger logic: Bind to ALL CTA-like elements
-      const triggers = document.querySelectorAll('button:not(#close-popup):not([type="submit"]), a[href^="#"], .bg-primary');
+      const triggers = document.querySelectorAll('button:not(#close-popup):not(#mobile-menu-btn):not([type="submit"]), a[href^="#"], .bg-primary');
       triggers.forEach(el => {
         el.addEventListener('click', (e) => {
           const href = el.getAttribute('href');
