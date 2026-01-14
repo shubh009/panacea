@@ -1350,7 +1350,10 @@
           const href = el.getAttribute('href');
           if (href && (href.startsWith('tel:') || href.includes('wa.me') || href.startsWith('mailto:'))) return;
 
-          if (!el.closest('#lead-popup')) {
+          // Specifically exclude FAQ accordion buttons
+          const isFaqButton = el.querySelector('.icon-plus') || el.closest('.faq-content');
+
+          if (!el.closest('#lead-popup') && !isFaqButton) {
             if (href === '#' || !href) e.preventDefault();
             openPopup(true); // Force open on manual click
           }
