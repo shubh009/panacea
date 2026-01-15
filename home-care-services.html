@@ -32,6 +32,48 @@
       }
     }
   </script>
+  <style>
+    .service-card {
+      border-radius: 40px;
+      position: relative;
+      overflow: hidden;
+      mask-image: radial-gradient(circle at bottom right, transparent 60px, black 61px);
+      -webkit-mask-image: radial-gradient(circle at bottom right, transparent 60px, black 61px);
+    }
+
+    .service-card-btn {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50% 0 0 0;
+      /* Not exactly, usually it's a full circle */
+    }
+
+    /* Pixel perfect notch adjustment */
+    .notch-container {
+      position: relative;
+      border-radius: 40px;
+    }
+
+    .bg-icon {
+      position: absolute;
+      right: -20px;
+      top: 20px;
+      width: 200px;
+      height: 200px;
+      opacity: 0.03;
+      transform: rotate(-10deg);
+      pointer-events: none;
+    }
+
+    .service-card:hover .bg-icon {
+      opacity: 0.07;
+      transform: rotate(0deg) scale(1.1);
+      transition: all 0.5s ease;
+    }
+  </style>
 </head>
 
 <body class="font-body text-gray-800 leading-relaxed">
@@ -48,9 +90,9 @@
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 text-md font-bold">
           <a href="/" class="hover:text-primary transition-colors">Home</a>
-          <a href="/about-us.html"
-            class="text-primary underline decoration-2 underline-offset-8 transition-colors">About Us</a>
-          <a href="/home-care-services.html" class="hover:text-primary transition-colors">Services</a>
+          <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
+          <a href="/home-care-services.html"
+            class="text-primary underline decoration-2 underline-offset-8 transition-colors">Services</a>
           <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
           <a href="#contact" class="hover:text-primary transition-colors">Contact Us</a>
         </nav>
@@ -89,8 +131,8 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
       <nav class="flex flex-col p-4 space-y-4 font-medium text-left text-gray-700">
         <a href="/" class="hover:text-primary transition-colors">Home</a>
-        <a href="/about-us.html" class="text-primary underline decoration-2 underline-offset-8">About Us</a>
-        <a href="/home-care-services.html" class="hover:text-primary transition-colors">Services</a>
+        <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
+        <a href="/home-care-services.html" class="text-primary underline decoration-2 underline-offset-8">Services</a>
         <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
         <a href="#contact" class="hover:text-primary transition-colors">Contact Us</a>
 
@@ -359,62 +401,299 @@
 
 
 
-      <!-- Existing Mission & Vision Cards (Polished Transitions) -->
-      <div class="grid md:grid-cols-2 gap-10">
-        <!-- Mission Card -->
-        <div
-          class="group relative p-12 rounded-[3.5rem] bg-secondary/40 border border-primary/5 hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(181,52,55,0.1)] transition-all duration-700">
-          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <svg class="w-32 h-32 text-primary" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
-            </svg>
+      <!-- ================= WELLNESS SERVICES SECTION (NEW) ================= -->
+      <div class="mt-32">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div class="max-w-xl">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight mb-4">
+              Start Feeling Your Best <br> Explore Our Home Care Services
+            </h2>
           </div>
-
-          <div
-            class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-gray-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
-              </path>
-            </svg>
-          </div>
-
-          <h3
-            class="font-heading text-3xl font-black text-slate-900 mb-6 group-hover:text-primary transition-colors uppercase tracking-tighter">
-            Our Mission</h3>
-          <p class="text-slate-600 leading-relaxed text-lg">
-            To provide world-class, compassionate home healthcare that empowers patients to recover with dignity and
-            comfort in their own environment. We strive to be the bridge between clinical expertise and heartfelt care.
-          </p>
         </div>
 
-        <!-- Vision Card -->
-        <div
-          class="group relative p-12 rounded-[3.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-700 hover:border-primary/20">
-          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <svg class="w-32 h-32 text-primary" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-            </svg>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1: ICU At Home -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <!-- Background Icon -->
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">ICU At Home
+              </h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Critical care services including ventilator management and 24/7 monitoring brought directly to your
+                home.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Expert Care</span>
+              </div>
+            </div>
+            <!-- Arrow Button in Notch -->
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
           </div>
 
-          <div
-            class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-              </path>
-            </svg>
+          <!-- Card 2: Nursing Care -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">Nursing Care
+              </h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Professional nursing services for wound care, injections, and overall patient health management.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Trained Nurses</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
           </div>
 
-          <h3
-            class="font-heading text-3xl font-black text-slate-900 mb-6 group-hover:text-primary transition-colors uppercase tracking-tighter">
-            Our Vision</h3>
-          <p class="text-slate-600 leading-relaxed text-lg">
-            To become the most trusted leader in personalized home healthcare, setting the standard for clinical
-            excellence and patient-centric services through innovation, empathy, and unwavering commitment.
-          </p>
+          <!-- Card 3: Physiotherapy -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">Physiotherapy
+              </h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Personalized rehabilitation and physical therapy sessions to restore mobility and strength.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Recovery</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 4: Medical Equipment (Highlighted) -->
+          <div class="relative group lg:-translate-y-4">
+            <div class="service-card bg-primary p-8 transition-all duration-500 h-full">
+              <svg class="bg-icon text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-white/10 group-hover:scale-110 transition-transform duration-500 border border-white/10 relative z-10">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-white mb-3 tracking-tight relative z-10">Medical Equipment
+              </h3>
+              <p class="text-white/80 text-sm leading-relaxed mb-8 relative z-10">
+                High-quality medical devices including oxygen concentrators, hospital beds, and monitors for home use.
+              </p>
+              <div class="border-t border-dashed border-white/20 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_8px_white]"></span>
+                <span class="text-xs font-bold text-white/60 uppercase tracking-wider">Full Support</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:scale-110 transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Second Row -->
+          <!-- Card 5: Post-Surgical Care -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">Post-Surgical
+                Care</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Comprehensive care and monitoring to ensure a smooth recovery after surgical procedures.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Fast Recovery</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 6: Elderly Care -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">Elderly Care
+              </h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Compassionate assistance and health management for seniors to maintain quality of life.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Compassionate Care</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 7: Mother & Baby Care -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">Mother & Baby
+                Care</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Specialized care for new mothers and infants, ensuring both are healthy and well-supported.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Expert Support</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 8: Lab Tests at Home -->
+          <div class="relative group">
+            <div
+              class="service-card bg-white p-8 border border-primary/40 group-hover:border-primary transition-all duration-500 h-full">
+              <svg class="bg-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.722 2.528a2 2 0 01-1.022 1.25l-2.023.708a2 2 0 01-1.96-1.414" />
+              </svg>
+
+              <div
+                class="w-16 h-16 mb-8 flex items-center justify-center rounded-2xl bg-[#F8FAFC] group-hover:scale-110 transition-transform duration-500 border border-slate-50 relative z-10">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.722 2.528a2 2 0 01-1.022 1.25l-2.023.708a2 2 0 01-1.96-1.414" />
+                </svg>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 tracking-tight relative z-10">Lab Tests at
+                Home</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 relative z-10">
+                Convenient sample collection from your doorstep for a wide range of diagnostic laboratory tests.
+              </p>
+              <div class="border-t border-dashed border-slate-200 pt-6 flex items-center gap-3 relative z-10">
+                <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Convenient Labs</span>
+              </div>
+            </div>
+            <a href="#"
+              class="absolute bottom-0 right-0 w-14 h-14 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform group-hover:rotate-45 shadow-lg z-20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>

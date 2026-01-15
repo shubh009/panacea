@@ -47,12 +47,11 @@
       <div class="flex items-center gap-8">
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 text-md font-bold">
-          <a href="/" class="hover:text-primary transition-colors">Home</a>
+          <a href="/" class="text-primary underline decoration-2 underline-offset-8 transition-colors">Home</a>
           <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
-          <a href="#services" class="hover:text-primary transition-colors">Services</a>
+          <a href="/home-care-services.html" class="hover:text-primary transition-colors">Services</a>
           <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
           <a href="#contact" class="hover:text-primary transition-colors">Contact Us</a>
-
         </nav>
 
         <!-- Contact Buttons (Matching Screenshot) -->
@@ -88,11 +87,28 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
       <nav class="flex flex-col p-4 space-y-4 font-medium text-left text-gray-700">
-        <a href="/" class="hover:text-primary transition-colors">Home</a>
+        <a href="/" class="text-primary underline decoration-2 underline-offset-8">Home</a>
         <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
-        <a href="#services" class="hover:text-primary transition-colors">Services</a>
+        <a href="/home-care-services.html" class="hover:text-primary transition-colors">Services</a>
         <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
         <a href="#contact" class="hover:text-primary transition-colors">Contact Us</a>
+
+        <!-- Mobile Calling Button -->
+        <div class="pt-4 border-t border-gray-100">
+          <a href="tel:+919528022510"
+            class="flex items-center gap-3 bg-secondary border border-[#E5E7EB]/50 px-4 py-3 rounded-2xl shadow-sm transition-all">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India flag"
+              class="w-7 h-5 object-cover rounded-sm">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-[#F97316]" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                </path>
+              </svg>
+              <span class="text-[#111827] font-bold text-lg leading-none">+91-9528022510</span>
+            </div>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
