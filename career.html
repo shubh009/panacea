@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panacea Home Care Services | About us</title>
+  <title>Career | Panacea Home Care Services</title>
 
   <!-- Google Fonts (Antara-style typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +57,9 @@
   <header class="sticky top-0 bg-white shadow z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between relative">
       <div class="text-2xl font-heading font-semibold text-primary">
-        <img src="./images/Panacea-Logo.jpg" alt="Panacea Logo" class="w-40">
+        <a href="/">
+          <img src="./images/Panacea-Logo.jpg" alt="Panacea Logo" class="w-40">
+        </a>
       </div>
 
       <!-- Right Side Actions -->
@@ -65,10 +67,10 @@
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 text-md font-bold">
           <a href="/" class="hover:text-primary transition-colors">Home</a>
-          <a href="/about-us.html"
-            class="text-primary underline decoration-2 underline-offset-8 transition-colors">About Us</a>
+          <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
           <a href="/home-care-services.html" class="hover:text-primary transition-colors">Services</a>
-          <a href="/career.html" class="hover:text-primary transition-colors">Career</a>
+          <a href="/career.html"
+            class="text-primary underline decoration-2 underline-offset-8 transition-colors">Career</a>
           <a href="/contact-us.html" class="hover:text-primary transition-colors">Contact Us</a>
         </nav>
 
@@ -106,9 +108,9 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
       <nav class="flex flex-col p-4 space-y-4 font-medium text-left text-gray-700">
         <a href="/" class="hover:text-primary transition-colors">Home</a>
-        <a href="/about-us.html" class="text-primary underline decoration-2 underline-offset-8">About Us</a>
+        <a href="/about-us.html" class="hover:text-primary transition-colors">About Us</a>
         <a href="/home-care-services.html" class="hover:text-primary transition-colors">Services</a>
-        <a href="/career.html" class="hover:text-primary transition-colors">Career</a>
+        <a href="/career.html" class="text-primary underline decoration-2 underline-offset-8">Career</a>
         <a href="/contact-us.html" class="hover:text-primary transition-colors">Contact Us</a>
 
         <!-- Mobile Calling Button -->
@@ -148,731 +150,253 @@
     });
   </script>
 
-  <!-- ================= HERO ================= -->
-  <!-- ================= HERO ================= -->
-  <section class="relative bg-white min-h-[600px] flex items-center">
-    <!-- Background Image with Overlay -->
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative h-[300px] lg:h-[400px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-      <img src="./images/bg-hero.jpeg" alt="Caring hands" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gray-400/60"></div>
+      <img
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        alt="Panacea Career" class="w-full h-full object-cover animate-fade-in-up" />
+      <div class="absolute inset-0 bg-secondary/70 md:bg-secondary/40 backdrop-blur-[0px]"></div>
     </div>
 
-    <!-- Toast Container -->
-    <div id="toast-container" class="fixed bottom-4 right-4 z-[100] flex flex-col gap-2"></div>
-
-    <div class="max-w-7xl mx-auto px-4 py-20 relative z-10 w-full">
-      <div class="flex flex-col md:flex-row md:justify-between items-center gap-8 md:gap-0">
-
-        <!-- Left Column: Content (65%) -->
-        <div class="w-full md:w-[65%] text-center md:text-left">
-          <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-            Quality Healthcare <br>
-            <span class="text-primary">at the comfort of your Home</span>
-          </h1>
-          <p class="mb-8 text-lg text-black md:max-w-xl mx-auto md:mx-0">
-            Professional nursing, trained attendants, physiotherapy, doctor consultations, and critical care services -
-            all provided in the comfort and safety of your home.
-          </p>
-          <div class="hidden md:flex gap-4">
-            <a href="#services"
-              class="outline  outline-[1px] outline-primary/50 text-primary px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center gap-2">
-              Explore Our Services
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Column: Enquiry Form (30%) -->
-        <div class="w-full md:w-[30%]">
-          <div class="bg-secondary/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-2xl border border-white/50">
-            <h3 class="font-heading text-xl font-bold text-gray-800 mb-2">
-              Book a Free Consultation
-            </h3>
-            <p class="text-gray-600 mb-4 text-sm">
-              Because healing feels better at home
-            </p>
-
-            <form class="space-y-4" novalidate>
-              <div>
-                <label for="name" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Full
-                  Name</label>
-                <input type="text" id="name" placeholder="John Doe"
-                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
-              </div>
-
-              <div>
-                <label for="phone" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Phone
-                  Number</label>
-                <input type="tel" id="phone" placeholder="+91 98765 43210"
-                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
-              </div>
-
-              <div>
-                <label for="service" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Service
-                  Required</label>
-                <select id="service"
-                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 outline-none appearance-none text-sm">
-                  <option value="" disabled selected>Select a Service</option>
-                  <option value="elder-care">Elder/Senior Care</option>
-                  <option value="icu-home">ICU at Home</option>
-                  <option value="nursing">Nursing Care</option>
-                  <option value="medical-equipment">Medical Equipment</option>
-                  <option value="medicine-at-home">Medicine At Home</option>
-                  <option value="physiotherapy">Physiotherapy</option>
-                  <option value="doctor-consultation">Doctor Consultation</option>
-                  <option value="cancer-care">Cancer Care</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <button type="submit"
-                class="w-full bg-primary text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 mt-2 flex items-center justify-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-                Book Consultation
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 animate-fade-in-up">
+      <h1 class="font-heading text-5xl md:text-7xl font-bold text-gray-900 mb-4 tracking-tight">
+        Career
+      </h1>
+      <nav class="flex justify-center items-center gap-2 text-gray-600 text-sm font-medium uppercase tracking-widest">
+        <a href="/" class="hover:text-primary transition-colors">Home</a>
+        <span class="text-primary">•</span>
+        <span>Career</span>
+      </nav>
     </div>
   </section>
 
-  <!-- ================= ABOUT US INTRO (REFINE & STATS) ================= -->
-  <section id="about-intro" class="py-24 bg-white overflow-hidden relative">
-    <!-- Subtle Background Accents -->
-    <div
-      class="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/3">
-    </div>
-
+  <!-- ================= JOB OPENINGS & FORM ================= -->
+  <section class="py-20 bg-white relative">
     <div class="max-w-7xl mx-auto px-4">
-      <!-- Polish Header Section -->
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-20 items-center">
-        <div class="lg:w-7/12">
-          <div class="flex items-stretch gap-6 md:gap-10">
-            <!-- Vertical Accent Bar -->
-            <div class="w-1.5 bg-primary rounded-full shrink-0 shadow-[0_0_20px_rgba(181,52,55,0.15)]"></div>
-
-            <div class="flex-1">
-              <!-- Label with Line -->
-              <div class="flex items-center gap-4 mb-8">
-                <div class="w-8 h-[2px] bg-primary rounded-full"></div>
-                <p class="text-[10px] font-black tracking-[0.4em] text-slate-400 uppercase">About Us</p>
-              </div>
-
-              <h2 class="font-heading text-3xl md:text-5xl lg:text-5xl font-black text-slate-900 leading-[1.1] ">
-                PANACEA — <br class="hidden md:block">
-
-                <span class="text-primary uppercase">Heal at The</span>
-                <span class=" text-primary uppercase">Comfort</span> <br class="hidden md:block"> of Your Home
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:w-5/12">
-          <div class="relative pl-6 border-l-2 border-primary/10">
-            <p class="text-slate-600 text-lg md:text-xl leading-relaxed font-body italic mb-6">
-              "Healing is a matter of time, but it is sometimes also a matter of opportunity and the right environment."
-            </p>
-            <p class="text-slate-500 text-base leading-relaxed">
-              Panacea Home Care delivers quality care with compassion. We bring hospital-grade medical care into our
-              patients' homes, making healthcare not only more <span
-                class="text-slate-900 font-bold underline decoration-primary/30 underline-offset-4">accessible</span>,
-              but also more <span
-                class="text-slate-900 font-bold underline decoration-primary/30 underline-offset-4">affordable</span>
-              for every family.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Polished Stats Grid (Social Proof) -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-32 relative">
-        <!-- Abstract background blur for the whole grid -->
-        <div class="absolute inset-0 bg-primary/5 blur-[100px] -z-10 rounded-full scale-110 opacity-30"></div>
-
-        <!-- Card 1: Patients Served (Primary Gradient) -->
-        <div
-          class="relative group p-8 rounded-[2.5rem] bg-gradient-to-br from-secondary to-white border border-white hover:border-primary/30 transition-all duration-700 text-center overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10">
-          <!-- Abstract Circle -->
-          <div
-            class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full group-hover:scale-150 transition-transform duration-700">
-          </div>
-
-          <div class="relative z-10">
-            <div
-              class="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-500 drop-shadow-sm">
-              500+</div>
-            <p
-              class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] leading-tight opacity-80 group-hover:opacity-100 group-hover:text-slate-900 transition-all">
-              Families<br>Served</p>
-          </div>
-        </div>
-
-        <!-- Card 2: Expert Staff (Slate/Cool Gradient) -->
-        <div
-          class="relative group p-8 rounded-[2.5rem] bg-gradient-to-br from-slate-50 to-white border border-white hover:border-slate-300 transition-all duration-700 text-center overflow-hidden shadow-sm hover:shadow-2xl">
-          <!-- Abstract Grid Overlay -->
-          <div
-            class="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-700 pointer-events-none"
-            style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 16px 16px;"></div>
-
-          <div class="relative z-10">
-            <div
-              class="text-4xl md:text-5xl font-black text-slate-800 mb-2 group-hover:translate-y-[-4px] transition-transform duration-500">
-              50+</div>
-            <p
-              class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] leading-tight group-hover:text-slate-700 transition-all">
-              Expert<br>Staff</p>
-          </div>
-        </div>
-
-        <!-- Card 3: Care Services (Golden/Beige Gradient) -->
-        <div
-          class="relative group p-8 rounded-[2.5rem] bg-gradient-to-br from-[#fef3c7]/40 to-white border border-white hover:border-[#edddab] transition-all duration-700 text-center overflow-hidden shadow-sm hover:shadow-2xl">
-          <!-- Abstract Flowing Wave -->
-          <svg
-            class="absolute bottom-0 right-0 w-32 h-32 text-[#edddab]/30 group-hover:text-[#edddab]/60 transition-all duration-700 translate-x-1/4 translate-y-1/4"
-            viewBox="0 0 200 200" fill="currentColor">
-            <path
-              d="M44.7,-76.4C58.3,-69.2,70,-58.5,77.7,-45.6C85.4,-32.7,89.1,-17.6,88.4,-2.7C87.7,12.2,82.6,26.9,74.9,40.1C67.2,53.3,56.9,65,44.1,72.7C31.3,80.4,16,84.1,0.6,83.1C-14.8,82.1,-29.6,76.4,-42.8,68.8C-56,61.2,-67.6,51.7,-75.4,39.6C-83.2,27.5,-87.2,12.8,-86.6,-1.7C-86,-16.2,-80.8,-30.5,-72.1,-42.3C-63.4,-54.1,-51.2,-63.4,-38.3,-71C-25.4,-78.6,-11.7,-84.5,1.7,-87.3C15.1,-90.1,31.2,-83.6,44.7,-76.4Z"
-              transform="translate(100 100)" />
-          </svg>
-
-          <div class="relative z-10">
-            <div
-              class="text-4xl md:text-5xl font-black text-primary/80 mb-2 group-hover:scale-110 transition-transform duration-500">
-              15+</div>
-            <p
-              class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] leading-tight group-hover:text-slate-800 transition-all">
-              Care<br>Services</p>
-          </div>
-        </div>
-
-        <!-- Card 4: Support (Sunset/Orange Gradient) -->
-        <div
-          class="relative group p-8 rounded-[2.5rem] bg-gradient-to-br from-[#ffedd5]/40 to-white border border-white hover:border-[#fb923c]/40 transition-all duration-700 text-center overflow-hidden shadow-sm hover:shadow-2xl">
-          <!-- Abstract Flare -->
-          <div
-            class="absolute -bottom-10 -left-10 w-32 h-32 bg-[#fb923c]/10 rounded-full blur-2xl group-hover:bg-[#fb923c]/20 transition-all duration-700">
-          </div>
-
-          <div class="relative z-10">
-            <div
-              class="text-4xl md:text-5xl font-black text-slate-900 mb-2 transition-colors duration-500 group-hover:text-[#ea580c]">
-              24/7</div>
-            <p
-              class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] leading-tight group-hover:text-slate-700 transition-all">
-              Available<br>Support</p>
-          </div>
-        </div>
-      </div>
-
-
-
-      <!-- Existing Mission & Vision Cards (Polished Transitions) -->
-      <div class="grid md:grid-cols-2 gap-10">
-        <!-- Mission Card -->
-        <div
-          class="group relative p-12 rounded-[3.5rem] bg-secondary/40 border border-primary/5 hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(181,52,55,0.1)] transition-all duration-700">
-          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <svg class="w-32 h-32 text-primary" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
-            </svg>
-          </div>
-
-          <div
-            class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-gray-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
-              </path>
-            </svg>
-          </div>
-
-          <h3
-            class="font-heading text-3xl font-black text-slate-900 mb-6 group-hover:text-primary transition-colors uppercase tracking-tighter">
-            Our Mission</h3>
-          <p class="text-slate-600 leading-relaxed text-lg">
-            To provide world-class, compassionate home healthcare that empowers patients to recover with dignity and
-            comfort in their own environment. We strive to be the bridge between clinical expertise and heartfelt care.
-          </p>
-        </div>
-
-        <!-- Vision Card -->
-        <div
-          class="group relative p-12 rounded-[3.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-700 hover:border-primary/20">
-          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <svg class="w-32 h-32 text-primary" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-            </svg>
-          </div>
-
-          <div
-            class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-              </path>
-            </svg>
-          </div>
-
-          <h3
-            class="font-heading text-3xl font-black text-slate-900 mb-6 group-hover:text-primary transition-colors uppercase tracking-tighter">
-            Our Vision</h3>
-          <p class="text-slate-600 leading-relaxed text-lg">
-            To become the most trusted leader in personalized home healthcare, setting the standard for clinical
-            excellence and patient-centric services through innovation, empathy, and unwavering commitment.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Script for Validation -->
-  <script src="js/validation.js"></script>
-
-  <!-- ================= WHY US / EXPERTISE ================= -->
-  <section id="why-us" class="bg-secondary/60 py-24 relative overflow-hidden">
-    <!-- Decorative Background Elements -->
-    <div
-      class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2">
-    </div>
-    <div
-      class="absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2">
-    </div>
-
-    <div class="max-w-6xl mx-auto px-4">
 
       <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-          Why Families <span class="text-primary">Choose Panacea</span>
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <div
+          class="inline-block px-4 py-1.5 rounded-full bg-secondary text-primary text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-primary/10">
+          Vacancy / Career
+        </div>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          Join Our <span class="text-primary">Team!</span>
         </h2>
-        <p class="text-primary text-xl font-medium tracking-wide uppercase">Experience & Expertise</p>
-        <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full opacity-20"></div>
-        <p class="text-gray-600 mt-6 max-w-2xl mx-auto text-sm leading-relaxed">
-          We combine professional medical standards with the warmth of family care. Our legacy of trust is built on
-          years of dedicated service and verified excellence.
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Be part of a compassionate team dedicated to bringing world-class healthcare to every home.
+          We are looking for skilled professionals who care.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-12 gap-16 items-center">
+      <div class="grid lg:grid-cols-12 gap-12">
 
-        <!-- Left: Circular Visual (Span 5) -->
-        <div class="lg:col-span-5 relative flex justify-center lg:justify-start pr-0">
-          <div class="relative">
-            <!-- Background Decorative Blobs -->
-            <div class="absolute -top-10 -left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-pulse"></div>
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary rounded-full blur-3xl opacity-50"></div>
+        <!-- Left: Job Listings Grid (Span 8) -->
+        <div class="lg:col-span-8">
+          <div class="grid md:grid-cols-2 gap-6">
 
-            <!-- Circular Frame -->
-            <div class="relative w-72 h-72 md:w-96 md:h-96">
-              <!-- Complex Animated Rings -->
-              <div class="absolute inset-0 border-[2px] border-primary/20 rounded-full scale-110 animate-pulse-slow">
-              </div>
-              <div class="absolute inset-0 border-[1px] border-primary/10 rounded-full scale-125 animate-spin-slow">
-              </div>
-              <div class="absolute inset-0 border-[1px] border-secondary-dark/10 rounded-full scale-[1.35]"></div>
-
-              <!-- Main Image -->
-              <div
-                class="w-full h-full rounded-full overflow-hidden border-[10px] border-white shadow-2xl relative z-10">
-                <img src="./images/About2.jpg" alt="Care Expert"
-                  class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-60">
-                </div>
-              </div>
-
-              <!-- Floating Badge 1: Top Rated Care (Glassmorphism & Google Proof) -->
-              <div
-                class="absolute bottom-10 -left-10 md:left-[-15%] z-20 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl border border-white/50 flex items-center gap-4 animate-bounce-slow hover:scale-105 transition-all duration-300">
-                <div
-                  class="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-inner border border-gray-50 p-2 shrink-0">
-                  <svg viewBox="0 0 24 24" class="w-full h-full">
-                    <path
-                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                      fill="#4285F4" />
-                    <path
-                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                      fill="#34A853" />
-                    <path
-                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                      fill="#FBBC05" />
-                    <path
-                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                      fill="#EA4335" />
-                  </svg>
-                </div>
-                <div class="flex flex-col text-left">
-                  <div class="flex items-center gap-1.5 mb-0.5">
-                    <span class="text-xs font-bold text-gray-900 leading-none">4.8 Rating</span>
-                    <div class="flex text-yellow-500 text-[10px]">★★★★★</div>
-                  </div>
-                  <span class="text-[0.65rem] font-bold text-gray-500 uppercase tracking-wider">Top Families
-                    Choice</span>
-                </div>
-              </div>
-
-              <!-- Floating Badge 2: Years of Experience -->
-              <div
-                class="absolute -top-4 -right-8 md:-right-12 z-30 bg-primary text-white p-4 rounded-3xl shadow-2xl border border-white/20 transform rotate-6 animate-pulse-slow">
-                <div class="flex items-center gap-3">
-                  <svg class="w-6 h-6 opacity-90 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                    </path>
-                  </svg>
-                  <div class="flex flex-col items-start translate-y-0.5">
-                    <span class="text-[0.6rem] font-medium uppercase tracking-widest leading-none mb-1">Since</span>
-                    <span class="text-2xl font-bold leading-none">2021</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Floating Detail: Care Certificate -->
-              <div
-                class="absolute top-[10%] -left-12 z-[40] lg:flex items-center gap-2 bg-white p-3 rounded-2xl shadow-xl border border-gray-100 transform -rotate-12 hover:rotate-0 transition-transform duration-500">
-                <div
-                  class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shadow-inner">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
-                    </path>
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="text-[0.75rem] font-bold text-gray-900 leading-none">Certified</span>
-                  <span class="text-[0.6rem] text-gray-500 font-medium uppercase tracking-wider">Expertise</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Feature Grid (Span 7) -->
-        <div class="lg:col-span-7">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-            <!-- Item 1: Comprehensive Care -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-all group">
-              <div
-                class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Comprehensive Home Care</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                End-to-end services including nursing, physiotherapy, doctor consultations, and critical care support -
-                all under one roof.
+            <!-- Job Card 1 -->
+            <div
+              class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 group flex flex-col items-start h-full">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Full Time / Part Time</span>
+              <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                Nursing Officer
+              </h3>
+              <p class="text-sm text-gray-600 mb-8 leading-relaxed line-clamp-3 flex-grow">
+                Provide skilled nursing care to patients at home. Must be proficient in IV administration, wound care,
+                and
+                patient monitoring. GNM/B.Sc Nursing required.
               </p>
+              <a href="#apply-form"
+                class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
+                Apply Now
+              </a>
             </div>
 
-            <!-- Item 2: Qualified Experts -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-all group">
-              <div
-                class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Qualified Professionals</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Delivered by experienced nurses and certified physiotherapists who follow strict medical protocols and
-                standards.
+            <!-- Job Card 2 -->
+            <div
+              class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 group flex flex-col items-start h-full">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Full Time</span>
+              <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                Physiotherapist
+              </h3>
+              <p class="text-sm text-gray-600 mb-8 leading-relaxed line-clamp-3 flex-grow">
+                Design and implement rehabilitation programs for post-surgical and stroke patients. BPT/MPT with prior
+                experience in home visits preferred.
               </p>
+              <a href="#apply-form"
+                class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
+                Apply Now
+              </a>
             </div>
 
-            <!-- Item 3: 24/7 Support -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-all group">
-              <div
-                class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">24/7 Reliable Support</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Round-the-clock assistance ensuring timely medical attention and continuous care whenever it is needed.
+            <!-- Job Card 3 -->
+            <div
+              class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 group flex flex-col items-start h-full">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Part Time</span>
+              <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                General Physician
+              </h3>
+              <p class="text-sm text-gray-600 mb-8 leading-relaxed line-clamp-3 flex-grow">
+                On-call doctor for home visits and tele-consultation. MBBS/MD required. Flexible timings and competitive
+                consultation fees.
               </p>
+              <a href="#apply-form"
+                class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
+                Apply Now
+              </a>
             </div>
 
-            <!-- Item 4: Verified & Safe -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-all group">
-              <div
-                class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Verified & Safe Care</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Background-verified staff trained in hygiene, patient safety, and compassionate care practices for your
-                peace of mind.
+            <!-- Job Card 4 -->
+            <div
+              class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 group flex flex-col items-start h-full">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Full Time / Part Time</span>
+              <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                Care Giver / GDA
+              </h3>
+              <p class="text-sm text-gray-600 mb-8 leading-relaxed line-clamp-3 flex-grow">
+                Compassionate caregivers for elderly assistance, hygiene care, and mobility support. Training provided
+                for freshers.
               </p>
+              <a href="#apply-form"
+                class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
+                Apply Now
+              </a>
             </div>
 
           </div>
         </div>
+
+        <!-- Right: Application Form (Span 4) -->
+        <div class="lg:col-span-4">
+          <div id="apply-form"
+            class="border border-primary/10 bg-secondary/80 rounded-[2.5rem] p-8 lg:p-10 text-gray-900 shadow-2xl shadow-primary/5 sticky top-24">
+            <h3 class="font-heading text-primary text-2xl font-bold mb-6 text-center">Join Our Team</h3>
+
+            <form class="space-y-4">
+              <div>
+                <input type="text" placeholder="Your Name*" required
+                  class="w-full border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:bg-white/50 focus:border-primary transition-all">
+              </div>
+              <div>
+                <input type="email" placeholder="Your Email*" required
+                  class="w-full  border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:bg-white/50 focus:border-primary transition-all">
+              </div>
+              <div>
+                <select required
+                  class="w-full  border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 focus:outline-none focus:bg-white/50 focus:border-primary transition-all appearance-none cursor-pointer">
+                  <option value="" disabled selected class="text-gray-500">Select Position*</option>
+                  <option value="Nursing" class="text-gray-900">Nursing Officer</option>
+                  <option value="Physio" class="text-gray-900">Physiotherapist</option>
+                  <option value="Doctor" class="text-gray-900">Doctor</option>
+                  <option value="GDA" class="text-gray-900">Care Giver</option>
+                </select>
+              </div>
+              <div>
+                <textarea rows="4" placeholder="Enter your message"
+                  class="w-full bg-white border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:border-primary transition-all resize-none"></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-primary hover:bg-white hover:text-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 mt-2 uppercase tracking-wider text-sm">
+                Send Application
+              </button>
+
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-
-
-
-
-
-  <!-- ================= FINAL CTA SECTION ================= -->
-  <section class="py-16 relative overflow-hidden">
+  <!-- ================= BENEFITS SECTION ================= -->
+  <section class="py-24 bg-secondary/30">
     <div class="max-w-7xl mx-auto px-4">
-      <div
-        class="bg-gradient-to-br from-primary via-[#9b292b] to-[#701c1e] rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl border border-white/10">
-
-        <!-- Animated Background Vital Sign (Curved Pulse) -->
-        <div class="absolute inset-0 pointer-events-none opacity-[0.15] overflow-hidden">
-          <svg viewBox="0 0 1000 200" preserveAspectRatio="none" class="w-full h-full text-white">
-            <path id="bg-ecg-line"
-              d="M0,100 C50,100 150,100 200,100 C220,100 230,70 240,100 C250,130 265,20 285,100 C305,180 320,100 330,100 C380,100 450,100 500,100 C520,100 530,70 540,100 C550,130 565,20 585,100 C605,180 620,100 630,100 C680,100 750,100 800,100 C820,100 830,70 840,100 C850,130 865,20 885,100 C905,180 920,100 930,100 C980,100 1000,100 1000,100"
-              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-            <style>
-              #bg-ecg-line {
-                stroke-dasharray: 2500;
-                stroke-dashoffset: 2500;
-                animation: ecg-flow-curved 10s linear infinite;
-              }
-
-              @keyframes ecg-flow-curved {
-                to {
-                  stroke-dashoffset: 0;
-                }
-              }
-            </style>
-          </svg>
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <div
+            class="inline-block px-4 py-1.5 rounded-full bg-white text-primary text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-gray-100">
+            Our Benefits
+          </div>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Why Panacea Has Been <br> <span class="text-primary">The Top Choice For Talent!</span>
+          </h2>
         </div>
+        <div>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            At Panacea, we don't just offer jobs; we offer careers that matter.
+            We ensure our team is empowered, valued, and safe while they provide
+            life-changing care to our patients.
+          </p>
+        </div>
+      </div>
 
-        <!-- Decorative background circles -->
-        <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-        <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-black/10 rounded-full blur-3xl"></div>
+      <div class="grid md:grid-cols-3 gap-8">
 
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
-          <div class="text-center lg:text-left text-white max-w-2xl">
-            <div
-              class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              Immediate Assistance Available
-            </div>
-            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Ready to bring Home care <br class="hidden md:block"> to your doorstep?
-            </h2>
-            <p class="text-white/80 text-lg md:text-xl leading-relaxed">
-              Don't wait for recovery. Start your journey to healing today with our certified medical team.
-              We are available 24/7 for your emergencies.
+        <!-- Benefit 1 -->
+        <div
+          class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 flex items-start gap-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div
+            class="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Professional Growth</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Regular training workshops, certifications, and clear career progression paths for all medical staff.
             </p>
           </div>
-
-          <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            <button onclick="document.dispatchEvent(new CustomEvent('open-lead-popup'))"
-              class="flex items-center justify-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl hover:bg-gray-50 transition-all transform hover:-translate-y-1 text-center min-w-[280px] group relative overflow-hidden">
-              <div class="absolute inset-0 bg-white/20 animate-pulse-slow pointer-events-none"></div>
-              <svg class="w-6 h-6 animate-bounce-slow" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
-                </path>
-              </svg>
-              <span class="relative z-10">Talk to medical expert</span>
-            </button>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- ================= TESTIMONIALS (Bento Grid) ================= -->
-  <section id="testimonials" class="bg-white py-24">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-col lg:flex-row gap-16 items-center">
-
-        <!-- Left: Content (35%) -->
-        <div class="lg:w-[35%] space-y-8">
-          <h2 class="font-heading text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-            Real families, Real care, <br> <span class="text-primary"> Real stories</span>
-          </h2>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            Unlock peace of mind with our handpicked team of caregivers. We don't just provide care; we build lasting
-            relationships based on trust and dignity.
-          </p>
-
-
-
-          <!-- Google Listing Social Proof -->
-          <div class="pt-2">
-            <div
-              class="inline-flex items-center gap-4 bg-gradient-to-br from-secondary to-white border-secondary p-4 pr-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transform hover:-translate-y-1 transition-transform cursor-default">
-              <!-- Google Icon Circle -->
-              <div
-                class="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1.5 shrink-0 shadow-sm border border-gray-50">
-                <svg viewBox="0 0 24 24" class="w-full h-full">
-                  <path fill="#4285F4"
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                  <path fill="#34A853"
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                  <path fill="#FBBC05"
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                  <path fill="#EA4335"
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                </svg>
-              </div>
-
-              <!-- Content -->
-              <div>
-                <div class="flex flex-col items-start gap-0.5 mb-1">
-                  <span class="font-bold text-gray-900 text-sm">Panacea Home Care</span>
-                  <div class="flex text-[#F4B400] gap-0.5">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="text-[0.7rem] text-gray-500 font-medium">
-                  <span class="text-gray-900 font-bold text-sm">4.8</span> Rating • <span
-                    class="text-gray-900 font-bold">500+</span> Families
-                </div>
-              </div>
-            </div>
+        <!-- Benefit 2 -->
+        <div
+          class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 flex items-start gap-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div
+            class="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+              </path>
+            </svg>
           </div>
-
-
-          <!-- CTA Button -->
-          <div class="pt-4">
-            <a href="/contact-us.html"
-              class="bg-gray-900 text-white px-8 py-4 rounded-full text-sm font-bold tracking-wide hover:bg-gray-800 transition-colors inline-flex items-center gap-2 group">
-              Need Care? Book a Call
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                </path>
-              </svg>
-            </a>
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Attractive Allowance</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Competitive salary packages, travel allowances, and performance-based incentives.
+            </p>
           </div>
         </div>
 
-        <!-- Right: Bento Grid (65%) -->
-        <div class="lg:w-[65%] w-full">
-          <!-- Masonry Grid: 3 cols on desktop -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- Column 1 -->
-            <div class="space-y-6 flex flex-col">
-              <!-- Card 1: Portrait (Mike) -->
-              <div class="relative h-64 rounded-[2rem] overflow-hidden group">
-                <img src="./images/about-1.jpeg"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  alt="Mr Ayush">
-                <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <!-- <div class="text-xs font-bold text-gray-900">Mike</div> -->
-                  <div class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Mr. Ayush
-                    Yadav
-                  </div>
-                </div>
-              </div>
-              <!-- Card 2: Text (Purple Style -> Panacea Soft Red) -->
-              <div
-                class="bg-[#FFF1F2] p-8 rounded-[2rem] flex-grow flex flex-col justify-center min-h-[160px] hover:shadow-lg transition-shadow">
-                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Compassionate Care</h3>
-                <p class="text-gray-600 text-xs leading-relaxed">
-                  "They treated my father with such dignity. It felt like family."
-                </p>
-              </div>
-            </div>
-
-            <!-- Column 2 -->
-            <div class="space-y-6 flex flex-col">
-              <!-- Card 3: Text (Green Style -> Panacea Beige) -->
-              <div
-                class="bg-secondary p-8 rounded-[2rem] flex-grow flex flex-col justify-center min-h-[160px] hover:shadow-lg transition-shadow">
-                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Quick & Adaptable</h3>
-                <p class="text-gray-600 text-xs leading-relaxed">
-                  "Hire within 24 hours. Easily adjust your care plan as needs change."
-                </p>
-              </div>
-              <!-- Card 4: Portrait (Asger) -->
-              <div class="relative h-64 rounded-[2rem] overflow-hidden group">
-                <img src="./images/ICU-Setup-at-Home.jpg"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  alt="Asger">
-                <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <!-- <div class="text-xs font-bold text-gray-900">Mr. Rohit</div> -->
-                  <div class="bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Mr Rohit</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Column 3 -->
-            <div class="space-y-6 flex flex-col">
-              <!-- Card 5: Portrait (Latisha) -->
-              <div class="relative h-64 rounded-[2rem] overflow-hidden group">
-                <img src="./images/phyotherpist.jpg"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-gray-200 border-2"
-                  alt=" Latisha">
-                <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                  <!-- <div class="text-xs font-bold text-gray-900">Miss Sonam Gupta</div> -->
-                  <div class="bg-purple-100 text-purple-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Miss Sonam
-                    Gupta
-                  </div>
-                </div>
-              </div>
-              <!-- Card 6: Text (Orange Style -> Neutral Gray) -->
-              <div
-                class="bg-gray-50 p-8 rounded-[2rem] flex-grow flex flex-col justify-center min-h-[160px] hover:shadow-lg transition-shadow">
-                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Zero Hassle</h3>
-                <p class="text-gray-600 text-xs leading-relaxed">
-                  "No hidden fees or legal worries. Just pure, focused care."
-                </p>
-              </div>
-            </div>
-
+        <!-- Benefit 3 -->
+        <div
+          class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 flex items-start gap-6 group hover:-translate-y-2 transition-transform duration-300">
+          <div
+            class="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Health Insurance</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Comprehensive health insurance coverage for you and your family members.
+            </p>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
   <!-- ================= FAQ SECTION ================= -->
   <section id="faq" class="bg-gray-50 py-24">
     <div class="max-w-7xl mx-auto px-4">
