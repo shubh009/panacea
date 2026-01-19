@@ -148,98 +148,41 @@
     });
   </script>
 
-  <!-- ================= HERO ================= -->
-  <!-- ================= HERO ================= -->
-  <section class="relative bg-white min-h-[600px] flex items-center">
-    <!-- Background Image with Overlay -->
+  <!-- ================= HERO SECTION ================= -->
+  <section
+    class="relative sm:h-[500px] h-[450px] flex items-center justify-center sm:pt-40 pt-60 pb-40 overflow-hidden">
+    <!-- Background Image with Polished Overlay -->
     <div class="absolute inset-0 z-0">
-      <img src="./images/bg-hero.jpeg" alt="Caring hands" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gray-400/60"></div>
+      <img src="./images/panacea-home-care-nurse-at-home.jpeg" alt="Panacea Home Care"
+        class="w-full h-full object-cover" />
+      <!-- Multi-layered overlay for depth and readability -->
+      <div class="absolute inset-0 bg-white/80 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/90"></div>
     </div>
 
-    <!-- Toast Container -->
-    <div id="toast-container" class="fixed bottom-4 right-4 z-[100] flex flex-col gap-2"></div>
+    <!-- Decorative Elements -->
 
-    <div class="max-w-7xl mx-auto px-4 py-20 relative z-10 w-full">
-      <div class="flex flex-col md:flex-row md:justify-between items-center gap-8 md:gap-0">
-
-        <!-- Left Column: Content (65%) -->
-        <div class="w-full md:w-[65%] text-center md:text-left">
-          <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-            Quality Healthcare <br>
-            <span class="text-primary">at the comfort of your Home</span>
-          </h1>
-          <p class="mb-8 text-lg text-black md:max-w-xl mx-auto md:mx-0">
-            Professional nursing, trained attendants, physiotherapy, doctor consultations, and critical care services -
-            all provided in the comfort and safety of your home.
-          </p>
-          <div class="hidden md:flex gap-4">
-            <a href="#services"
-              class="outline  outline-[1px] outline-primary/50 text-primary px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center gap-2">
-              Explore Our Services
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Column: Enquiry Form (30%) -->
-        <div class="w-full md:w-[30%]">
-          <div class="bg-secondary/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-2xl border border-white/50">
-            <h3 class="font-heading text-xl font-bold text-gray-800 mb-2">
-              Book a Free Consultation
-            </h3>
-            <p class="text-gray-600 mb-4 text-sm">
-              Because healing feels better at home
-            </p>
-
-            <form class="space-y-4" novalidate>
-              <div>
-                <label for="name" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Full
-                  Name</label>
-                <input type="text" id="name" placeholder="John Doe"
-                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
-              </div>
-
-              <div>
-                <label for="phone" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Phone
-                  Number</label>
-                <input type="tel" id="phone" placeholder="+91 98765 43210"
-                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
-              </div>
-
-              <div>
-                <label for="service" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Service
-                  Required</label>
-                <select id="service"
-                  class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 outline-none appearance-none text-sm">
-                  <option value="" disabled selected>Select a Service</option>
-                  <option value="elder-care">Elder/Senior Care</option>
-                  <option value="icu-home">ICU at Home</option>
-                  <option value="nursing">Nursing Care</option>
-                  <option value="medical-equipment">Medical Equipment</option>
-                  <option value="medicine-at-home">Medicine At Home</option>
-                  <option value="physiotherapy">Physiotherapy</option>
-                  <option value="doctor-consultation">Doctor Consultation</option>
-                  <option value="cancer-care">Cancer Care</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <button type="submit"
-                class="w-full bg-primary text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 mt-2 flex items-center justify-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-                Book Consultation
-              </button>
-            </form>
-          </div>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10 w-full text-center mt-[-40px]">
+      <!-- Premium Badge -->
+      <div
+        class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white shadow-xl shadow-primary/5 border border-primary/10 mb-10">
+        <span class="flex h-2 w-2">
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">About Panacea Home Care
+          Care</span>
       </div>
+
+      <h1
+        class="font-heading text-3xl md:text-6xl lg:text-7xl font-black mb-8 text-slate-900 leading-[1.1] tracking-tight">
+        Senior Care Starts At The <br />
+        <span class="text-primary italic font-serif ">Comfort of Your Home</span>
+      </h1>
+      <p class="mb-16 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
+        Panacea brings hospital-standard medical excellence, professional nursing, and compassionate care directly to
+        your doorstep. Because recovery is better where you belong.
+      </p>
+
     </div>
   </section>
 
@@ -281,12 +224,10 @@
               "Healing is a matter of time, but it is sometimes also a matter of opportunity and the right environment."
             </p>
             <p class="text-slate-500 text-base leading-relaxed">
-              Panacea Home Care delivers quality care with compassion. We bring hospital-grade medical care into our
-              patients' homes, making healthcare not only more <span
-                class="text-slate-900 font-bold underline decoration-primary/30 underline-offset-4">accessible</span>,
-              but also more <span
-                class="text-slate-900 font-bold underline decoration-primary/30 underline-offset-4">affordable</span>
-              for every family.
+              At Panacea Home Care, we bring trusted healthcare services to the comfort of your home. From critical care
+              and nursing support to rehabilitation and diagnostic services, our team is committed to delivering
+              personalized, compassionate care that supports recovery, comfort, and well-being for patients and
+              families.
             </p>
           </div>
         </div>
@@ -1440,8 +1381,8 @@
         }, 500);
       };
 
-      // Auto-open after 5 seconds
-      setTimeout(() => openPopup(false), 5000);
+      // Auto-open disabled on About Us page
+      // setTimeout(() => openPopup(false), 5000);
 
       // Trigger logic: Bind to ALL CTA-like elements
       const triggers = document.querySelectorAll('button:not(#close-popup):not(#mobile-menu-btn):not([type="submit"]), a[href^="#"], .bg-primary');
@@ -1512,7 +1453,8 @@
       // Global event listener for manual trigger
       document.addEventListener('open-lead-popup', () => openPopup(true));
 
-      // EXIT INTENT: Trigger popup when user moves mouse to leave the page
+      // EXIT INTENT DISABLED on About Us page
+      /*
       let exitIntentTriggered = false;
       document.addEventListener('mouseleave', (e) => {
         // e.clientY < 0 usually means the mouse left the top of the window (tabs/address bar area)
@@ -1521,6 +1463,7 @@
           exitIntentTriggered = true;
         }
       });
+      */
     });
   </script>
 
