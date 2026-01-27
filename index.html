@@ -99,8 +99,11 @@
     }
     </script>
 
-  <!-- Tailwind CDN (Development Only) -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./js/email-service.js"></script>
 
   <script>
     tailwind.config = {
@@ -280,25 +283,25 @@
               Because healing feels better at home
             </p>
 
-            <form class="space-y-4" novalidate>
+            <form id="consultation-form" class="space-y-4" novalidate>
               <div>
                 <label for="name" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Full
                   Name</label>
-                <input type="text" id="name" placeholder="John Doe"
+                <input type="text" id="name" name="name" placeholder="John Doe"
                   class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
               </div>
 
               <div>
                 <label for="phone" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Phone
                   Number</label>
-                <input type="tel" id="phone" placeholder="+91 98765 43210"
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"
                   class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 placeholder-gray-400 outline-none text-sm" />
               </div>
 
               <div>
                 <label for="service" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Service
                   Required</label>
-                <select id="service"
+                <select id="service" name="service"
                   class="w-full px-4 py-3 rounded-lg border-gray-200 focus:border-primary focus:ring-primary focus:ring-2 transition-colors bg-white/80 text-gray-800 outline-none appearance-none text-sm">
                   <option value="" disabled selected>Select a Service</option>
                   <option value="elder-care">Elder/Senior Care</option>
@@ -331,8 +334,7 @@
   <!-- Script for Validation -->
   <script src="js/validation.js"></script>
 
-  <!-- Script for Validation -->
-  <script src="js/validation.js"></script>
+
 
 
   <!-- ================= SERVICES ================= -->
@@ -623,7 +625,8 @@
               </div>
               <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Comprehensive Home Care</h3>
               <p class="text-xs text-gray-600 leading-relaxed">
-                End-to-end services including nursing, physiotherapy, doctor consultations, and critical care support -
+                End-to-end services including nursing, physiotherapy, doctor consultations, and critical care support
+                -
                 all under one roof.
               </p>
             </div>
@@ -655,7 +658,8 @@
               </div>
               <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">24/7 Reliable Support</h3>
               <p class="text-xs text-gray-600 leading-relaxed">
-                Round-the-clock assistance ensuring timely medical attention and continuous care whenever it is needed.
+                Round-the-clock assistance ensuring timely medical attention and continuous care whenever it is
+                needed.
               </p>
             </div>
 
@@ -671,7 +675,8 @@
               </div>
               <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Verified & Safe Care</h3>
               <p class="text-xs text-gray-600 leading-relaxed">
-                Background-verified staff trained in hygiene, patient safety, and compassionate care practices for your
+                Background-verified staff trained in hygiene, patient safety, and compassionate care practices for
+                your
                 peace of mind.
               </p>
             </div>
@@ -1457,6 +1462,7 @@
       const closeBtn = document.getElementById('close-popup');
       const overlay = document.getElementById('popup-overlay');
       const form = document.getElementById('popup-form');
+      const consultationForm = document.getElementById('consultation-form'); // Get the consultation form
       const popupVisual = document.getElementById('popup-visual');
 
       let popupWasClosed = false;
@@ -1493,6 +1499,7 @@
       const triggers = document.querySelectorAll('button:not(#close-popup):not(#mobile-menu-btn):not([type="submit"]), a[href^="#"], .bg-primary');
       triggers.forEach(el => {
         el.addEventListener('click', (e) => {
+          if (el.getAttribute('type') === 'submit') return;
           const href = el.getAttribute('href');
           if (href && (href.startsWith('tel:') || href.includes('wa.me') || href.startsWith('mailto:'))) return;
 
@@ -1510,31 +1517,45 @@
       closeBtn.addEventListener('click', () => closePopup(true));
       overlay.addEventListener('click', () => closePopup(true));
 
-      // Form Submission logic
+      // Form Submission logic for popup form
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalContent = submitBtn.innerHTML;
-
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending...';
 
-        setTimeout(() => {
-          submitBtn.innerHTML = 'Success! Redirecting...';
-          submitBtn.classList.remove('bg-primary');
-          submitBtn.classList.add('bg-green-500');
+        window.EmailService.sendForm(form, { form_name: 'Lead Popup' })
+          .then(() => {
+            submitBtn.innerHTML = 'Sent Successfully!';
+            submitBtn.classList.remove('bg-primary');
+            submitBtn.classList.add('bg-green-500');
 
-          setTimeout(() => {
-            closePopup(true);
-            form.reset();
-            popupVisual.classList.remove('scale-110');
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalContent;
-            submitBtn.classList.add('bg-primary');
-            submitBtn.classList.remove('bg-green-500');
-          }, 2000);
-        }, 1500);
+            // Show Toast if available
+            if (window.showToast) {
+              window.showToast('Thank you! Your message has been received by our customer executive, and we will call you back.', 'success');
+            }
+
+            setTimeout(() => {
+              closePopup(true);
+              form.reset();
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalContent;
+              submitBtn.classList.add('bg-primary');
+              submitBtn.classList.remove('bg-green-500');
+            }, 3000);
+          })
+          .catch((error) => {
+            console.error('Email error:', error);
+            submitBtn.innerHTML = 'Failed. Try again.';
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalContent;
+            }, 2000);
+          });
       });
+
+
 
       // NEW: Animate image when hovering over the popup
       card.addEventListener('mouseenter', () => {

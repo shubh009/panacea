@@ -15,6 +15,9 @@
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./js/email-service.js"></script>
 
   <script>
     tailwind.config = {
@@ -295,7 +298,7 @@
                 and
                 patient monitoring. GNM/B.Sc Nursing required.
               </p>
-              <a href="#apply-form"
+              <a href="#apply-form-container"
                 class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
                 Apply Now
               </a>
@@ -312,7 +315,7 @@
                 Design and implement rehabilitation programs for post-surgical and stroke patients. BPT/MPT with prior
                 experience in home visits preferred.
               </p>
-              <a href="#apply-form"
+              <a href="#apply-form-container"
                 class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
                 Apply Now
               </a>
@@ -329,7 +332,7 @@
                 On-call doctor for home visits and tele-consultation. MBBS/MD required. Flexible timings and competitive
                 consultation fees.
               </p>
-              <a href="#apply-form"
+              <a href="#apply-form-container"
                 class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
                 Apply Now
               </a>
@@ -346,7 +349,7 @@
                 Compassionate caregivers for elderly assistance, hygiene care, and mobility support. Training provided
                 for freshers.
               </p>
-              <a href="#apply-form"
+              <a href="#apply-form-container"
                 class="bg-primary text-white px-8 py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-red-700 hover:-translate-y-0.5 transition-all inline-block">
                 Apply Now
               </a>
@@ -357,21 +360,21 @@
 
         <!-- Right: Application Form (Span 4) -->
         <div class="lg:col-span-4">
-          <div id="apply-form"
+          <div id="apply-form-container"
             class="border border-primary/10 bg-secondary/80 rounded-[2.5rem] p-8 lg:p-10 text-gray-900 shadow-2xl shadow-primary/5 sticky top-24">
             <h3 class="font-heading text-primary text-2xl font-bold mb-6 text-center">Join Our Team</h3>
 
-            <form class="space-y-4">
+            <form id="career-form" class="space-y-4">
               <div>
-                <input type="text" placeholder="Your Name*" required
+                <input type="text" name="name" placeholder="Your Name*" required
                   class="w-full border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:bg-white/50 focus:border-primary transition-all">
               </div>
               <div>
-                <input type="email" placeholder="Your Email*" required
+                <input type="email" name="email" placeholder="Your Email*" required
                   class="w-full  border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:bg-white/50 focus:border-primary transition-all">
               </div>
               <div>
-                <select required
+                <select name="position" required
                   class="w-full  border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 focus:outline-none focus:bg-white/50 focus:border-primary transition-all appearance-none cursor-pointer">
                   <option value="" disabled selected class="text-gray-500">Select Position*</option>
                   <option value="Nursing" class="text-gray-900">Nursing Officer</option>
@@ -381,7 +384,7 @@
                 </select>
               </div>
               <div>
-                <textarea rows="4" placeholder="Enter your message"
+                <textarea name="message" rows="4" placeholder="Enter your message"
                   class="w-full bg-white border border-gray-600/20 rounded-xl px-5 py-3.5 text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:border-primary transition-all resize-none"></textarea>
               </div>
 
@@ -730,28 +733,46 @@
       closeBtn.addEventListener('click', () => closePopup(true));
       overlay.addEventListener('click', () => closePopup(true));
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalContent = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending...';
+      const setupForm = (formId, formName) => {
+        const form = document.getElementById(formId);
+        if (!form) return;
 
-        setTimeout(() => {
-          submitBtn.innerHTML = 'Success! Redirecting...';
-          submitBtn.classList.remove('bg-primary');
-          submitBtn.classList.add('bg-green-500');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn.innerHTML;
 
-          setTimeout(() => {
-            closePopup(true);
-            form.reset();
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalContent;
-            submitBtn.classList.add('bg-primary');
-            submitBtn.classList.remove('bg-green-500');
-          }, 2000);
-        }, 1500);
-      });
+          btn.disabled = true;
+          btn.innerHTML = 'Sending...';
+
+          window.EmailService.sendForm(form, { form_name: formName })
+            .then(() => {
+              btn.innerHTML = 'Success!';
+              btn.classList.remove('bg-primary');
+              btn.classList.add('bg-green-500', 'text-white');
+
+              setTimeout(() => {
+                if (formId === 'popup-form') closePopup(true);
+                form.reset();
+                btn.innerHTML = originalText;
+                btn.classList.add('bg-primary');
+                btn.classList.remove('bg-green-500', 'text-white');
+                btn.disabled = false;
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error(err);
+              btn.innerHTML = 'Failed. Try again.';
+              setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+              }, 2000);
+            });
+        });
+      };
+
+      setupForm('popup-form', 'Career Page Popup');
+      setupForm('career-form', 'Career Application Form');
 
       document.addEventListener('open-lead-popup', () => openPopup(true));
 

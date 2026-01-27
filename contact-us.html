@@ -15,6 +15,9 @@
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./js/email-service.js"></script>
 
     <script>
         tailwind.config = {
@@ -84,7 +87,7 @@
                                     d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
                                 </path>
                             </svg>
-                            <span class="text-[#111827] font-bold text-lg leading-none">+91-7055647228</span>
+                            <span class="text-[#111827] font-bold text-lg leading-none">+91-9528022510</span>
                         </div>
                         <svg class="w-4 h-4 text-[#008080] group-hover:translate-y-0.5 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +117,7 @@
 
                 <!-- Mobile Calling Button -->
                 <div class="pt-4 border-t border-gray-100">
-                    <a href="tel:+917055647228"
+                    <a href="tel:+919528022510"
                         class="flex items-center gap-3 bg-secondary border border-[#E5E7EB]/50 px-4 py-3 rounded-2xl shadow-sm transition-all">
                         <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India flag"
                             class="w-7 h-5 object-cover rounded-sm">
@@ -124,7 +127,7 @@
                                     d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
                                 </path>
                             </svg>
-                            <span class="text-[#111827] font-bold text-lg leading-none">+91-7055647228</span>
+                            <span class="text-[#111827] font-bold text-lg leading-none">+91-9528022510</span>
                         </div>
                     </a>
                 </div>
@@ -213,7 +216,7 @@
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-gray-900 mb-1 font-heading">Call Us</h4>
-                                <a href="tel:+917055647228"
+                                <a href="tel:+919528022510"
                                     class="text-gray-600 text-sm hover:text-primary transition-colors block font-bold">+91
                                     95280 22510</a>
                             </div>
@@ -257,25 +260,25 @@
                         Fill out the form below and we'll get back to you as soon as possible.
                     </p>
 
-                    <form action="#" class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label
                                     class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Name</label>
-                                <input type="text" placeholder="Your full name"
+                                <input type="text" name="name" placeholder="Your full name" required
                                     class="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all text-sm outline-none shadow-sm">
                             </div>
                             <div class="space-y-2">
                                 <label
                                     class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Phone</label>
-                                <input type="tel" placeholder="+91 XXX XXX XXXX"
+                                <input type="tel" name="phone" placeholder="+91 XXX XXX XXXX" required
                                     class="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all text-sm outline-none shadow-sm">
                             </div>
                         </div>
 
                         <div class="space-y-2">
                             <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Message</label>
-                            <textarea rows="5" placeholder="Your message here..."
+                            <textarea name="message" rows="5" placeholder="Your message here..."
                                 class="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all text-sm outline-none shadow-sm resize-none"></textarea>
                         </div>
 
@@ -355,7 +358,7 @@
                             <div>
                                 <p class="font-bold text-primary text-lg mb-1">Phone & Email</p>
                                 <p class="text-gray-600 text-sm leading-relaxed font-medium">
-                                    +91 7055647228<br>
+                                    +91 9528022510<br>
                                     ask.panaceacare@gmail.com
                                 </p>
                             </div>
@@ -474,7 +477,7 @@
 
     <!-- ================= FLOATING CONTACT BUTTONS ================= -->
     <!-- Call Button -->
-    <a href="tel:+7055647228"
+    <a href="tel:+9528022510"
         class="fixed bottom-40 right-6 z-50 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:-translate-y-1 transition-transform duration-300 border-2 border-white animate-bounce-slow">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -483,7 +486,7 @@
     </a>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/7055647228" target="_blank"
+    <a href="https://wa.me/9528022510" target="_blank"
         class="fixed bottom-24 right-6 z-50 w-14 h-14 p-3 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:-translate-y-1 transition-transform duration-300 border-2 border-white animate-bounce-slow">
         <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -504,7 +507,7 @@
             </div>
             <div>
                 <p class="text-[10px] font-bold text-gray-400 uppercase leading-none mb-1">Contact us?</p>
-                <a href="tel:+917055647228"
+                <a href="tel:+919528022510"
                     class="text-sm font-extrabold text-[#111827] leading-none tracking-tight">+91 95280 22510</a>
             </div>
         </div>
@@ -588,13 +591,43 @@
         document.addEventListener('open-lead-popup', openPopup);
 
         // Form logic
-        document.getElementById('popup-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            btn.innerText = 'Sent Successfully!';
-            btn.classList.add('bg-green-600');
-            setTimeout(closePopup, 2000);
-        });
+        const setupForm = (formId, formName) => {
+            const form = document.getElementById(formId);
+            if (!form) return;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML; // Keep innerHTML to preserve icons
+
+                btn.disabled = true;
+                btn.innerText = 'Sending...';
+
+                window.EmailService.sendForm(form, { form_name: formName })
+                    .then(() => {
+                        btn.innerText = 'Sent Successfully!';
+                        btn.classList.add('bg-green-600', 'text-white');
+                        setTimeout(() => {
+                            if (formId === 'popup-form') closePopup();
+                            form.reset();
+                            btn.innerHTML = originalText;
+                            btn.classList.remove('bg-green-600', 'text-white');
+                            btn.disabled = false;
+                        }, 2000);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        btn.innerText = 'Failed. Try again.';
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                        }, 2000);
+                    });
+            });
+        };
+
+        setupForm('popup-form', 'Contact Page Popup');
+        setupForm('contact-form', 'Contact Page Main Form');
     </script>
 
 </body>

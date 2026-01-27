@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
+    const form = document.getElementById('consultation-form');
+    // If form specific to this page exists
+    if (!form) return;
+
     const nameInput = document.getElementById('name');
     const phoneInput = document.getElementById('phone');
     const serviceInput = document.getElementById('service');
@@ -7,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toast Notification System
     const showToast = (message, type = 'error') => {
+        if (!toastContainer) return; // Guard clause
+
         const toast = document.createElement('div');
 
         // Colors based on type
@@ -37,9 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     };
 
+    // Expose globally
+    window.showToast = showToast;
+
     // Validation Functions
     const validateName = () => {
-        if (nameInput.value.trim().length < 2) {
+        if (nameInput && nameInput.value.trim().length < 2) {
             return { valid: false, msg: 'Please enter a valid full name' };
         }
         return { valid: true };
@@ -47,16 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const validatePhone = () => {
         const phoneRegex = /^[0-9]{10}$/; // Simple 10 digit check
-        const cleanPhone = phoneInput.value.replace(/[\s-]/g, '');
+        const cleanPhone = phoneInput ? phoneInput.value.replace(/[\s-]/g, '') : '';
 
-        if (!phoneRegex.test(cleanPhone)) {
+        if (phoneInput && !phoneRegex.test(cleanPhone)) {
             return { valid: false, msg: 'Please enter a valid 10-digit phone number' };
         }
         return { valid: true };
     };
 
     const validateService = () => {
-        if (serviceInput.value === "" || serviceInput.value === null) {
+        if (serviceInput && (serviceInput.value === "" || serviceInput.value === null)) {
             return { valid: false, msg: 'Please select a service from the list' };
         }
         return { valid: true };
@@ -69,25 +77,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const nameCheck = validateName();
         if (!nameCheck.valid) {
             showToast(nameCheck.msg, 'error');
-            nameInput.focus();
+            if (nameInput) nameInput.focus();
             return;
         }
 
         const phoneCheck = validatePhone();
         if (!phoneCheck.valid) {
             showToast(phoneCheck.msg, 'error');
-            phoneInput.focus();
+            if (phoneInput) phoneInput.focus();
             return;
         }
 
         const serviceCheck = validateService();
         if (!serviceCheck.valid) {
             showToast(serviceCheck.msg, 'error');
-            serviceInput.focus();
+            if (serviceInput) serviceInput.focus();
             return;
         }
 
-        // Success - Simulate API call
+        // Submit via EmailJS
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalContent = submitBtn.innerHTML;
 
@@ -100,11 +108,27 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Sending...</span>
         `;
 
-        setTimeout(() => {
-            showToast('Consultation request sent successfully!', 'success');
-            form.reset();
+        if (window.EmailService) {
+            window.EmailService.sendForm(form, { form_name: 'Hero Consultation' })
+                .then(() => {
+                    showToast('Consultation request sent successfully!', 'success');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalContent;
+                    // Optional redirect
+                    // window.location.href = '/thank-you.html';
+                })
+                .catch((err) => {
+                    console.error(err);
+                    showToast('Failed to send request. Please try again.', 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalContent;
+                });
+        } else {
+            console.error("EmailService not found");
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalContent;
-        }, 1500);
+            showToast('Service unavailable. Please call us.', 'error');
+        }
     });
 });
